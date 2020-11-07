@@ -1,19 +1,17 @@
 extends KinematicBody2D
 
-var velocity = Vector2.ZERO
+const FLOOR_NORMAL = Vector2.UP
+const plant_scene_path = "res://src/plant.tscn"
 
 export var gravity = Vector2(0, 800)
 export var speed = 800
+export var spawn_offset = 32
 
-const FLOOR_NORMAL = Vector2.UP
-
-const plant_scene_path = "res://src/plant.tscn"
-
+var velocity = Vector2.ZERO
 var plant_scene = null
 var last_plant_right = INF
 var last_plant_left = -INF
 var is_landed = false
-export var spawn_offset = 32
 
 func _ready() -> void:
 	plant_scene = preload(plant_scene_path)
@@ -35,7 +33,7 @@ func check_for_spawn() -> void:
 	elif is_on_floor() and (position.x + spawn_offset) < last_plant_left:
 		spawn(last_plant_left - 32)
 
-func spawn(x_pos: int):
+func spawn(x_pos: float):
 		var plant = plant_scene.instance()
 		plant.position.y = position.y + 6
 		plant.position.x = x_pos
