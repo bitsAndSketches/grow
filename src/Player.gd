@@ -6,7 +6,6 @@ const plant_scene_path = "res://src/plant.tscn"
 export var gravity = Vector2(0, 800)
 export var speed = 800
 export var spawn_offset = 32
-export var y_offset = 6 
 
 var velocity = Vector2.ZERO
 var plant_scene = null
@@ -14,11 +13,13 @@ var last_plant_right = -INF
 var last_plant_left = +INF
 var is_landed = false
 var half_sprite = 0
+var plant_container
 
 func _ready() -> void:
 	plant_scene = preload(plant_scene_path)
 	var plant_ref = plant_scene.instance()
 	half_sprite = (plant_ref.get_rect().size).x / 2
+	plant_container = get_node("../Plant_container")
 
 func get_input(initial_velocity: Vector2) -> Vector2:
 	var new_velocity = Vector2(
@@ -39,9 +40,9 @@ func check_for_spawn() -> void:
 
 func spawn(x_pos: float):
 		var plant: Sprite = plant_scene.instance()
-		plant.position.y = position.y + y_offset
+		plant.position.y = position.y
 		plant.position.x = x_pos
-		get_parent().add_child(plant)
+		get_parent().add_child_below_node(plant_container, plant)
 		last_plant_left = plant.position.x - half_sprite
 		last_plant_right = plant.position.x + half_sprite
 	

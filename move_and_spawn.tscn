@@ -31,6 +31,8 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 
 [node name="Node2D" type="Node2D"]
 
+[node name="Plant_container" type="Node2D" parent="."]
+
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 2 )
 format = 1
