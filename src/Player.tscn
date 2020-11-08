@@ -15,5 +15,5 @@ texture = ExtResource( 2 )
 [node name="Camera2D" type="Camera2D" parent="player"]
 current = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="Collision" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
