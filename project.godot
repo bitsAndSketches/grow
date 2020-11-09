@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Grow"
-run/main_scene="res://move_and_spawn.tscn"
+run/main_scene="res://src/Levels/level_template_3d.tscn"
 config/icon="res://icon.png"
 
 [rendering]

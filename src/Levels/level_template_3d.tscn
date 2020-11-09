@@ -49,13 +49,11 @@ __meta__ = {
 
 [node name="Background" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.538013, 31.6779, -38.75 )
-visible = false
 mesh = SubResource( 3 )
 material/0 = null
 
 [node name="Wall" type="StaticBody" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 73.6744, 34.3472, 0 )
-visible = false
 
 [node name="MeshInstance" type="MeshInstance" parent="Wall"]
 mesh = SubResource( 4 )
@@ -66,7 +64,6 @@ shape = SubResource( 5 )
 
 [node name="Wall2" type="StaticBody" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -73.9268, 28.6855, 0 )
-visible = false
 
 [node name="MeshInstance" type="MeshInstance" parent="Wall2"]
 mesh = SubResource( 4 )
