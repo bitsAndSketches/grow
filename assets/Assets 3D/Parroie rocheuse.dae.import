@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/Parroie rocheuse.dae-2a29ccce7b62516ac65c9f313c047787.scn"
+path="res://.import/Parroie rocheuse.dae-495dba1d91c7392260a5cb3b0d77422a.scn"
 
 [deps]
 
-source_file="res://Assets/Parroie rocheuse.dae"
-dest_files=[ "res://.import/Parroie rocheuse.dae-2a29ccce7b62516ac65c9f313c047787.scn" ]
+source_file="res://assets/Assets 3D/Parroie rocheuse.dae"
+dest_files=[ "res://.import/Parroie rocheuse.dae-495dba1d91c7392260a5cb3b0d77422a.scn" ]
 
 [params]
 
