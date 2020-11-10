@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/Herbe - 5.png-4fdad340a4810cf110fb5a26a87a9087.s3tc.stex"
-path.etc2="res://.import/Herbe - 5.png-4fdad340a4810cf110fb5a26a87a9087.etc2.stex"
+path.s3tc="res://.import/Herbe - 5.png-67f1d3d5114be2bce86a032f80d65dc0.s3tc.stex"
+path.etc2="res://.import/Herbe - 5.png-67f1d3d5114be2bce86a032f80d65dc0.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Assets 2D/Herbe animée/Pousse Herbe animée/Herbe - 5.png"
-dest_files=[ "res://.import/Herbe - 5.png-4fdad340a4810cf110fb5a26a87a9087.s3tc.stex", "res://.import/Herbe - 5.png-4fdad340a4810cf110fb5a26a87a9087.etc2.stex" ]
+source_file="res://assets/Assets 2D/Herbe animée/Pousse Herbe animée/Herbe - 5.png"
+dest_files=[ "res://.import/Herbe - 5.png-67f1d3d5114be2bce86a032f80d65dc0.s3tc.stex", "res://.import/Herbe - 5.png-67f1d3d5114be2bce86a032f80d65dc0.etc2.stex" ]
 
 [params]
 

@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/vent herbe - 19.png-2528029f74063cabe73e2e857f10c882.s3tc.stex"
-path.etc2="res://.import/vent herbe - 19.png-2528029f74063cabe73e2e857f10c882.etc2.stex"
+path.s3tc="res://.import/vent herbe - 19.png-b73da5eda9a129234e0bf149f9600ceb.s3tc.stex"
+path.etc2="res://.import/vent herbe - 19.png-b73da5eda9a129234e0bf149f9600ceb.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Assets 2D/Herbe animée/Vent herbe animée/vent herbe - 19.png"
-dest_files=[ "res://.import/vent herbe - 19.png-2528029f74063cabe73e2e857f10c882.s3tc.stex", "res://.import/vent herbe - 19.png-2528029f74063cabe73e2e857f10c882.etc2.stex" ]
+source_file="res://assets/Assets 2D/Herbe animée/Vent herbe animée/vent herbe - 19.png"
+dest_files=[ "res://.import/vent herbe - 19.png-b73da5eda9a129234e0bf149f9600ceb.s3tc.stex", "res://.import/vent herbe - 19.png-b73da5eda9a129234e0bf149f9600ceb.etc2.stex" ]
 
 [params]
 

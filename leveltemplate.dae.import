@@ -2,16 +2,16 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/Pillier 2.dae-f64502243c2c19af05c72dda20cbec70.scn"
+path="res://.import/leveltemplate.dae-b725838a041e0443c5da7d12bbcee7aa.scn"
 
 [deps]
 
-source_file="res://assets/Assets 3D/Pillier 2.dae"
-dest_files=[ "res://.import/Pillier 2.dae-f64502243c2c19af05c72dda20cbec70.scn" ]
+source_file="res://leveltemplate.dae"
+dest_files=[ "res://.import/leveltemplate.dae-b725838a041e0443c5da7d12bbcee7aa.scn" ]
 
 [params]
 
-nodes/root_type="MeshInstance"
+nodes/root_type="Spatial"
 nodes/root_name="Scene Root"
 nodes/root_scale=1.0
 nodes/custom_script=""
