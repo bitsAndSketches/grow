@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/Petit roche.dae-3d5dedabbbf9b83397d27522f1c99419.scn"
+path="res://.import/Petit roche.dae-540d698b9b8d37e21ac844ceb468feb9.scn"
 
 [deps]
 
-source_file="res://Assets/Petit roche.dae"
-dest_files=[ "res://.import/Petit roche.dae-3d5dedabbbf9b83397d27522f1c99419.scn" ]
+source_file="res://assets/Assets 3D/Petit roche.dae"
+dest_files=[ "res://.import/Petit roche.dae-540d698b9b8d37e21ac844ceb468feb9.scn" ]
 
 [params]
 

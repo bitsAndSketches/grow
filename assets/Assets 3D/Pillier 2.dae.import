@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/Pillier 2.dae-6783a66418f696bbf42d67a5f42fdd87.scn"
+path="res://.import/Pillier 2.dae-f64502243c2c19af05c72dda20cbec70.scn"
 
 [deps]
 
-source_file="res://Assets/Pillier 2.dae"
-dest_files=[ "res://.import/Pillier 2.dae-6783a66418f696bbf42d67a5f42fdd87.scn" ]
+source_file="res://assets/Assets 3D/Pillier 2.dae"
+dest_files=[ "res://.import/Pillier 2.dae-f64502243c2c19af05c72dda20cbec70.scn" ]
 
 [params]
 

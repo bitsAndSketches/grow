@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/Grande roche.dae-4409fb051b5a9a46805ae66330398074.scn"
+path="res://.import/Grande roche.dae-6194dd363852ef7f8ada287f4291dfa2.scn"
 
 [deps]
 
-source_file="res://Assets/Grande roche.dae"
-dest_files=[ "res://.import/Grande roche.dae-4409fb051b5a9a46805ae66330398074.scn" ]
+source_file="res://assets/Assets 3D/Grande roche.dae"
+dest_files=[ "res://.import/Grande roche.dae-6194dd363852ef7f8ada287f4291dfa2.scn" ]
 
 [params]
 

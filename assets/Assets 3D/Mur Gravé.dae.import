@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/Mur Gravé.dae-c8ebc2cf2c5acf13573ab0b05152db28.scn"
+path="res://.import/Mur Gravé.dae-75151da6df7ee219f61d05a387691ab4.scn"
 
 [deps]
 
-source_file="res://Assets/Mur Gravé.dae"
-dest_files=[ "res://.import/Mur Gravé.dae-c8ebc2cf2c5acf13573ab0b05152db28.scn" ]
+source_file="res://assets/Assets 3D/Mur Gravé.dae"
+dest_files=[ "res://.import/Mur Gravé.dae-75151da6df7ee219f61d05a387691ab4.scn" ]
 
 [params]
 
