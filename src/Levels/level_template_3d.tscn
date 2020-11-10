@@ -10,7 +10,7 @@ __meta__ = {
 }
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.11054, 4.96821, 49.1343 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.12678, 0.761164, 49.1179 )
 speed = 12
 
 [node name="Parroie rocheuse" parent="." instance=ExtResource( 3 )]
