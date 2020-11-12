@@ -10,7 +10,7 @@ onready var is_landed = false
 onready var	plant_scene = preload("res://assets/Assets 2D/Root 1/Root 1.tscn")
 onready var plant_container = get_node("../PlantContainer")
 
-var half_sprite = 0
+var half_sprite = 2.5
 
 func _ready() -> void:
 	half_sprite = spawn_offset

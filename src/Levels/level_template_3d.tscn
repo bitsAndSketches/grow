@@ -1,24 +1,37 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://src/Actors/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/Assets 2D/Character/Character animated.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/Levels/PlantContainer.gd" type="Script" id=3]
 [ext_resource path="res://Materials/Leaf 1.tres" type="Material" id=4]
-[ext_resource path="res://assets/Assets 2D/Orbe/Orbe.png" type="Texture" id=5]
-[ext_resource path="res://assets/Assets 2D/Orbe/Orbe_alpha.png" type="Texture" id=6]
+[ext_resource path="res://Materials/Orb_material.tres" type="Material" id=5]
+[ext_resource path="res://assets/Assets 2D/Character/Character.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/Assets 2D/Leaves_particles/Leave_1.png" type="Texture" id=7]
+[ext_resource path="res://Leafs_character.gd" type="Script" id=8]
 
-[sub_resource type="CurveTexture" id=15]
-
-[sub_resource type="Curve" id=13]
-_data = [ Vector2( 0, 0 ), 0.0, 2.58658, 0, 0, Vector2( 1, 0 ), -2.47461, 0.0, 0, 0 ]
+[sub_resource type="Curve" id=1]
+min_value = -200.0
+max_value = 200.0
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
 
 [sub_resource type="CurveTexture" id=2]
-curve = SubResource( 13 )
+curve = SubResource( 1 )
 
-[sub_resource type="CurveTexture" id=14]
+[sub_resource type="Curve" id=3]
+_data = [ Vector2( 0, 0 ), 0.0, 2.58658, 0, 0, Vector2( 1, 0 ), -2.47461, 0.0, 0, 0 ]
 
-[sub_resource type="ParticlesMaterial" id=3]
+[sub_resource type="CurveTexture" id=4]
+curve = SubResource( 3 )
+
+[sub_resource type="Curve" id=5]
+min_value = -200.0
+max_value = 200.0
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=6]
+curve = SubResource( 5 )
+
+[sub_resource type="ParticlesMaterial" id=7]
 lifetime_randomness = 0.37
 emission_shape = 1
 emission_sphere_radius = 1.0
@@ -26,50 +39,39 @@ spread = 49.14
 gravity = Vector3( 0, -2, 0 )
 angular_velocity = -256.55
 radial_accel = -78.16
-radial_accel_curve = SubResource( 15 )
+radial_accel_curve = SubResource( 2 )
 tangential_accel = -33.88
 tangential_accel_random = 0.45
-tangential_accel_curve = SubResource( 14 )
+tangential_accel_curve = SubResource( 6 )
 angle = -258.2
 scale_random = 0.1
-scale_curve = SubResource( 2 )
+scale_curve = SubResource( 4 )
 
-[sub_resource type="QuadMesh" id=5]
+[sub_resource type="QuadMesh" id=8]
 material = ExtResource( 4 )
 
-[sub_resource type="SpatialMaterial" id=18]
+[sub_resource type="SpatialMaterial" id=9]
 flags_transparent = true
 albedo_texture = ExtResource( 7 )
 
-[sub_resource type="QuadMesh" id=19]
-material = SubResource( 18 )
+[sub_resource type="QuadMesh" id=10]
+material = SubResource( 9 )
 
-[sub_resource type="QuadMesh" id=16]
-
-[sub_resource type="SpatialMaterial" id=17]
-flags_transparent = true
-params_billboard_mode = 1
-albedo_texture = ExtResource( 5 )
-emission_enabled = true
-emission = Color( 0, 0, 0, 1 )
-emission_energy = 2.2
-emission_operator = 0
-emission_on_uv2 = false
-emission_texture = ExtResource( 6 )
-
-[sub_resource type="BoxShape" id=8]
-extents = Vector3( 50, 1, 50 )
-
-[sub_resource type="CubeMesh" id=9]
-size = Vector3( 100, 2, 100 )
-
-[sub_resource type="CubeMesh" id=10]
-size = Vector3( 100, 100, 1 )
-
-[sub_resource type="CubeMesh" id=11]
-size = Vector3( 50, 100.052, 100 )
+[sub_resource type="QuadMesh" id=11]
 
 [sub_resource type="BoxShape" id=12]
+extents = Vector3( 50, 1, 50 )
+
+[sub_resource type="CubeMesh" id=13]
+size = Vector3( 100, 2, 100 )
+
+[sub_resource type="CubeMesh" id=14]
+size = Vector3( 100, 100, 1 )
+
+[sub_resource type="CubeMesh" id=15]
+size = Vector3( 50, 100.052, 100 )
+
+[sub_resource type="BoxShape" id=16]
 extents = Vector3( 25, 50, 50 )
 
 [node name="Spatial" type="Spatial"]
@@ -83,82 +85,81 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03826, 0 )
 script = ExtResource( 3 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.94252, 49.4476 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.838844, 49.4476 )
 speed = 12
 
 [node name="Character animated" parent="Player" instance=ExtResource( 2 )]
 transform = Transform( 0.455667, 0, 0, 0, 0.455667, 0, 0, 0, 0.455667, 0, 0.6643, 0 )
 visible = false
-frame = 1
+frame = 4
 
 [node name="Particles" type="Particles" parent="Player"]
 transform = Transform( 0.34395, 0, 0, 0, 0.34395, 0, 0, 0, 0.34395, -0.00545502, 0.067726, 0.0208549 )
+visible = false
 amount = 10
 lifetime = 0.53
 preprocess = 0.04
 speed_scale = 0.1
 randomness = 1.0
 visibility_aabb = AABB( -0.842943, -0.904308, -0.850588, 1.66245, 1.80862, 1.69043 )
-process_material = SubResource( 3 )
-draw_pass_1 = SubResource( 5 )
+process_material = SubResource( 7 )
+draw_pass_1 = SubResource( 8 )
 
 [node name="Particles2" type="Particles" parent="Player"]
 transform = Transform( 0.34395, 0, 0, 0, 0.34395, 0, 0, 0, 0.34395, -0.00545502, 0.067726, 0.0208549 )
+visible = false
 amount = 10
 lifetime = 0.53
 preprocess = 0.04
 speed_scale = 0.1
 randomness = 1.0
 visibility_aabb = AABB( -0.842943, -0.904308, -0.850588, 1.66245, 1.80862, 1.69043 )
-process_material = SubResource( 3 )
-draw_pass_1 = SubResource( 19 )
+process_material = SubResource( 7 )
+draw_pass_1 = SubResource( 10 )
 
 [node name="MeshInstance2" type="MeshInstance" parent="Player"]
 transform = Transform( 0.982932, 0, 0, 0, 0.982932, 0, 0, 0, 0.982932, -0.0137315, 0, 0 )
-mesh = SubResource( 16 )
-material/0 = SubResource( 17 )
+visible = false
+mesh = SubResource( 11 )
+material/0 = ExtResource( 5 )
 
 [node name="OmniLight" type="OmniLight" parent="Player"]
+visible = false
+
+[node name="Spatial" parent="Player" instance=ExtResource( 6 )]
+script = ExtResource( 8 )
 
 [node name="StaticBody" type="StaticBody" parent="."]
-__meta__ = {
-"_edit_lock_": true
-}
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.90924, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
-shape = SubResource( 8 )
-__meta__ = {
-"_edit_lock_": true
-}
+shape = SubResource( 12 )
 
 [node name="MeshInstance" type="MeshInstance" parent="StaticBody"]
-mesh = SubResource( 9 )
+mesh = SubResource( 13 )
 material/0 = null
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="Background" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.538013, 31.6779, -38.75 )
-mesh = SubResource( 10 )
+mesh = SubResource( 14 )
 material/0 = null
 
 [node name="Wall" type="StaticBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 73.6744, 34.3472, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 73.6744, 31.438, 0 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Wall"]
-mesh = SubResource( 11 )
+mesh = SubResource( 15 )
 material/0 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="Wall"]
-shape = SubResource( 12 )
+shape = SubResource( 16 )
 
 [node name="Wall2" type="StaticBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -73.9268, 28.6855, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -73.9268, 25.7763, 0 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Wall2"]
-mesh = SubResource( 11 )
+mesh = SubResource( 15 )
 material/0 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="Wall2"]
-shape = SubResource( 12 )
+shape = SubResource( 16 )
