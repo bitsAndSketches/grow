@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://src/Actors/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/Assets 3D/Parroie rocheuse.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/World/Climbable.tscn" type="PackedScene" id=6]
 
 [node name="Spatial" type="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00714654, 0 )
@@ -9,18 +10,17 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Player" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.12678, 0.761164, 49.1179 )
-speed = 12
-
 [node name="Parroie rocheuse" parent="." instance=ExtResource( 3 )]
-transform = Transform( 0.156986, 0, -0.987601, 0, 1, 0, 0.987601, 0, 0.156986, -0.16552, -4.32005, 49.2333 )
+transform = Transform( 0.156986, 0, -0.987601, 0, 1, 0, 0.987601, 0, 0.156986, 1.71204, 2.87764, 0.792145 )
 
 [node name="Parroie rocheuse2" parent="." instance=ExtResource( 3 )]
-transform = Transform( 0.156986, 0, -0.987601, 0, 1, 0, 0.987601, 0, 0.156986, -10.4413, -3.60019, 49.2333 )
+transform = Transform( 0.156986, 0, -0.987601, 0, 1, 0, 0.987601, 0, 0.156986, -8.56374, 3.5975, 0.792145 )
 
 [node name="Parroie rocheuse3" parent="." instance=ExtResource( 3 )]
-transform = Transform( 0.103973, 0, 0.99458, 0, 1, 0, -0.99458, 0, 0.103973, 9.61649, -4.32005, 49.2333 )
+transform = Transform( 0.103973, 0, 0.99458, 0, 1, 0, -0.99458, 0, 0.103973, 11.4941, 2.87764, 0.792145 )
 
-[node name="Parroie rocheuse4" parent="." instance=ExtResource( 3 )]
-transform = Transform( -4.5448e-09, 1, -4.34745e-08, -0.103973, -4.37114e-08, -0.99458, -0.99458, 0, 0.103973, 16.9986, 1.43019, 49.2333 )
+[node name="Player" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.01168, 8.44531, 0.953012 )
+
+[node name="Climbable" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.1103, 4.44076, 1.17717 )
