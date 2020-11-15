@@ -35,19 +35,20 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 18 ), ExtResource( 21 ), ExtResource( 20 ), ExtResource( 19 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ) ],
-"loop": false,
-"name": "Growth",
-"speed": 20.0
-}, {
 "frames": [ ExtResource( 6 ), ExtResource( 5 ), ExtResource( 17 ), ExtResource( 2 ), ExtResource( 4 ), ExtResource( 15 ), ExtResource( 27 ), ExtResource( 32 ), ExtResource( 16 ), ExtResource( 30 ), ExtResource( 29 ), ExtResource( 31 ), ExtResource( 3 ), ExtResource( 28 ), ExtResource( 1 ) ],
 "loop": true,
 "name": "Idle",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 18 ), ExtResource( 21 ), ExtResource( 20 ), ExtResource( 19 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ) ],
+"loop": false,
+"name": "Growth",
+"speed": 20.0
 } ]
 
 [node name="Root 1" type="AnimatedSprite3D"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0435371, 2.55631, 0 )
 frames = SubResource( 1 )
 animation = "Idle"
-frame = 6
+frame = 11
 playing = true

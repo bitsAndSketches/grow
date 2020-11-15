@@ -1,8 +1,155 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://src/Actors/Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://assets/Assets 3D/Parroie rocheuse.tscn" type="PackedScene" id=3]
-[ext_resource path="res://src/World/Climbable.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/Levels/PlantContainer.gd" type="Script" id=3]
+[ext_resource path="res://assets/Assets 3D/Pillier 1.2.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/Assets 3D/Roots_character.gd" type="Script" id=6]
+[ext_resource path="res://assets/Assets 2D/Leaves_particles/Leave_1.png" type="Texture" id=7]
+[ext_resource path="res://src/Levels/Light character.gd" type="Script" id=8]
+[ext_resource path="res://assets/Assets 3D/Roots_character.tscn" type="PackedScene" id=9]
+[ext_resource path="res://assets/Assets 3D/Pillier 2.0.tscn" type="PackedScene" id=10]
+[ext_resource path="res://assets/Assets 3D/Pillier 1.3.tscn" type="PackedScene" id=11]
+[ext_resource path="res://assets/Assets 3D/Pillier 1.1.tscn" type="PackedScene" id=12]
+[ext_resource path="res://assets/Assets 3D/Mur Gravé.tscn" type="PackedScene" id=13]
+[ext_resource path="res://assets/Assets 3D/Parroie rocheuse.tscn" type="PackedScene" id=14]
+[ext_resource path="res://assets/Assets 2D/Orbe/Orbe.png" type="Texture" id=15]
+[ext_resource path="res://assets/Assets 2D/Orbe/Orbe_alpha.png" type="Texture" id=16]
+
+[sub_resource type="ProceduralSky" id=20]
+sky_top_color = Color( 0.294118, 0.176471, 0.372549, 1 )
+sky_horizon_color = Color( 0.513726, 0.54902, 0.305882, 1 )
+sky_curve = 0.0931738
+sky_energy = 6.27
+ground_bottom_color = Color( 0.141176, 0.101961, 0.14902, 1 )
+ground_horizon_color = Color( 0.156863, 0.0666667, 0.156863, 1 )
+ground_curve = 0.0156917
+ground_energy = 1.75
+sun_color = Color( 0.803922, 0.607843, 0.356863, 1 )
+sun_latitude = -37.0
+sun_angle_min = 0.0
+sun_angle_max = 91.53
+sun_energy = 31.87
+
+[sub_resource type="Environment" id=21]
+background_mode = 2
+background_sky = SubResource( 20 )
+ambient_light_color = Color( 0.0784314, 0.0470588, 0.0901961, 1 )
+ambient_light_energy = 0.02
+fog_enabled = true
+fog_color = Color( 0.137255, 0.027451, 0.176471, 1 )
+fog_sun_color = Color( 0.294118, 0.105882, 0.470588, 1 )
+fog_depth_begin = 3.7
+fog_depth_end = 24.6
+fog_depth_curve = 0.68302
+ss_reflections_enabled = true
+ss_reflections_fade_in = 0.395853
+ss_reflections_fade_out = 2.14355
+ss_reflections_depth_tolerance = 5.5
+ssao_radius = 0.92
+ssao_intensity = 67.11
+dof_blur_far_distance = 4.96
+dof_blur_far_transition = 7.62
+dof_blur_far_amount = 0.15
+dof_blur_far_quality = 2
+dof_blur_near_distance = 4.03
+dof_blur_near_transition = 2.02
+dof_blur_near_amount = 0.17
+glow_enabled = true
+glow_intensity = 1.08
+glow_strength = 1.08
+glow_bloom = 0.01
+glow_blend_mode = 0
+glow_hdr_threshold = 1.58
+glow_hdr_luminance_cap = 256.0
+glow_hdr_scale = 1.59
+
+[sub_resource type="Curve" id=28]
+_data = [ Vector2( 0.0189873, 0 ), 0.0, 3.34799, 0, 0, Vector2( 1, 0 ), -4.65621, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=29]
+curve = SubResource( 28 )
+
+[sub_resource type="ParticlesMaterial" id=30]
+emission_shape = 1
+emission_sphere_radius = 1.71
+flag_disable_z = true
+direction = Vector3( 1, 1, 1 )
+gravity = Vector3( 0, -5, 0 )
+orbit_velocity = 1.0
+orbit_velocity_random = 0.1
+radial_accel = -80.46
+scale_random = 0.57
+scale_curve = SubResource( 29 )
+
+[sub_resource type="SpatialMaterial" id=31]
+flags_transparent = true
+albedo_texture = ExtResource( 7 )
+
+[sub_resource type="QuadMesh" id=10]
+material = SubResource( 31 )
+size = Vector2( 0.5, 0.5 )
+
+[sub_resource type="PhysicsMaterial" id=11]
+
+[sub_resource type="BoxShape" id=12]
+extents = Vector3( 50, 1, 50 )
+
+[sub_resource type="CubeMesh" id=13]
+size = Vector3( 100, 2, 100 )
+
+[sub_resource type="ShaderMaterial" id=14]
+
+[sub_resource type="CubeMesh" id=15]
+size = Vector3( 100, 100, 1 )
+
+[sub_resource type="CubeMesh" id=16]
+size = Vector3( 50, 100.052, 100 )
+
+[sub_resource type="ShaderMaterial" id=17]
+
+[sub_resource type="BoxShape" id=18]
+extents = Vector3( 25, 50, 50 )
+
+[sub_resource type="ShaderMaterial" id=19]
+
+[sub_resource type="PhysicsMaterial" id=22]
+
+[sub_resource type="Curve" id=23]
+max_value = 568.52
+_data = [ Vector2( 0, 0 ), 0.0, 4.14865, 0, 0, Vector2( 1, 0 ), -3.33157, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=24]
+curve = SubResource( 23 )
+
+[sub_resource type="ParticlesMaterial" id=25]
+lifetime_randomness = 0.72
+emission_shape = 2
+emission_box_extents = Vector3( 10, 7.282, 0.5 )
+direction = Vector3( 0, -5, 0 )
+spread = 0.01
+gravity = Vector3( 0, -3, 0 )
+initial_velocity = 5.0
+damping = 2.3
+damping_random = 0.1
+scale = 0.0
+scale_random = 1.0
+scale_curve = SubResource( 24 )
+color = Color( 0.376471, 0.121569, 0.654902, 1 )
+
+[sub_resource type="SpatialMaterial" id=26]
+flags_transparent = true
+params_billboard_mode = 1
+albedo_texture = ExtResource( 15 )
+emission_enabled = true
+emission = Color( 0.901961, 0.678431, 0.396078, 1 )
+emission_energy = 4.95
+emission_operator = 1
+emission_on_uv2 = false
+emission_texture = ExtResource( 16 )
+
+[sub_resource type="QuadMesh" id=27]
+material = SubResource( 26 )
+size = Vector2( 0.05, 0.05 )
 
 [node name="Spatial" type="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00714654, 0 )
@@ -10,17 +157,294 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Parroie rocheuse" parent="." instance=ExtResource( 3 )]
-transform = Transform( 0.156986, 0, -0.987601, 0, 1, 0, 0.987601, 0, 0.156986, 1.71204, 2.87764, 0.0261948 )
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 21 )
 
-[node name="Parroie rocheuse2" parent="." instance=ExtResource( 3 )]
-transform = Transform( 0.156986, 0, -0.987601, 0, 1, 0, 0.987601, 0, 0.156986, -8.56374, 3.5975, 0.0261948 )
-
-[node name="Parroie rocheuse3" parent="." instance=ExtResource( 3 )]
-transform = Transform( 0.103973, 0, 0.99458, 0, 1, 0, -0.99458, 0, 0.103973, 11.4941, 2.87764, 0.0261948 )
+[node name="PlantContainer" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03826, 0 )
+visible = false
+script = ExtResource( 3 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.012, 8.445, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.7194, 0.924463, 0.0811598 )
+speed = 2
 
-[node name="Climbable" parent="." instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.1103, 4.44076, 0.41122 )
+[node name="Feuilles 1-1" type="Particles" parent="Player"]
+transform = Transform( 0.313542, 0, 0, 0, 0.331504, 0, 0, 0, 0.93626, -0.00813198, 0.067726, 0.0217361 )
+amount = 10
+lifetime = 1.82
+preprocess = 0.04
+speed_scale = 0.05
+randomness = 1.0
+visibility_aabb = AABB( -1.16629, -0.904308, -0.406836, 2.30916, 1.80862, 0.802926 )
+process_material = SubResource( 30 )
+draw_pass_1 = SubResource( 10 )
+
+[node name="Feuilles 1-2" type="Particles" parent="Player"]
+transform = Transform( 0.0248948, -0.269184, 0.541362, 0.259346, 0.125108, 0.389867, -0.174438, 0.147589, 0.656897, -0.00813198, 0.067726, 0.0217359 )
+lifetime = 0.61
+preprocess = 0.04
+speed_scale = 0.05
+randomness = 1.0
+visibility_aabb = AABB( -1.16629, -0.904308, -0.406836, 2.30916, 1.80862, 0.802926 )
+process_material = SubResource( 30 )
+draw_pass_1 = SubResource( 10 )
+
+[node name="Roots_character" parent="Player" instance=ExtResource( 9 )]
+transform = Transform( 0.0296467, 0, 0, 0, 0.0296467, 0, 0, 0, 0.0296467, 0.0083369, 0.031526, 0.0140686 )
+visible = false
+script = ExtResource( 6 )
+
+[node name="OmniLight" type="OmniLight" parent="Player"]
+transform = Transform( -1, 0, 0, 0, -1, 0, 0, 0, -1, 0, 0, 0 )
+light_color = Color( 0.960784, 0.745098, 0.490196, 1 )
+light_energy = 1.49
+light_indirect_energy = 0.0
+light_specular = 0.0
+shadow_enabled = true
+shadow_color = Color( 0.235294, 0.247059, 0.196078, 1 )
+shadow_bias = 0.0
+omni_range = 8.0
+omni_attenuation = 4.14105
+omni_shadow_mode = 0
+script = ExtResource( 8 )
+
+[node name="OmniLight2" type="OmniLight" parent="Player"]
+transform = Transform( -1, 0, 0, 0, -1, 0, 0, 0, -1, 1.37082, 0, 0 )
+visible = false
+light_color = Color( 0.752941, 0.921569, 0.670588, 1 )
+light_energy = 1.28
+light_indirect_energy = 0.0
+light_specular = 0.0
+shadow_enabled = true
+shadow_bias = 0.0
+omni_range = 4.9
+omni_attenuation = 2.63901
+omni_shadow_mode = 0
+script = ExtResource( 8 )
+
+[node name="Camera" type="Camera" parent="Player"]
+transform = Transform( 1, 6.81948e-09, 2.26358e-09, -7.16016e-09, 0.919403, 0.393316, 6.01067e-10, -0.393316, 0.919403, 0, 2.32571, 4.09074 )
+doppler_tracking = 2
+current = true
+fov = 65.4
+near = 0.21
+far = 240.8
+
+[node name="Sprite3D" type="Sprite3D" parent="Player"]
+transform = Transform( 0.0192723, 0, 0, 0, 0.0192723, 0, 0, 0, 0.0192723, 0, 0, 0 )
+opacity = 0.84
+texture = ExtResource( 15 )
+
+[node name="Sol" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.90924, 0 )
+physics_material_override = SubResource( 11 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Sol"]
+shape = SubResource( 12 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Sol"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.553955, 0 )
+mesh = SubResource( 13 )
+material/0 = SubResource( 14 )
+
+[node name="Parroie rocheuse10" parent="Sol" instance=ExtResource( 14 )]
+transform = Transform( 0.113878, 0.0711268, -0.989283, 0.931644, -0.207011, 0.108497, -0.118478, -0.949971, -0.097713, 15.6423, -0.55327, -1.55744 )
+mass = 5.04
+gravity_scale = -28.03
+
+[node name="Parroie rocheuse11" parent="Sol" instance=ExtResource( 14 )]
+transform = Transform( -0.168456, -0.894575, -0.409256, 0.931355, -0.202932, 0.10339, -0.249803, -0.332565, 0.869997, 7.08358, -0.128729, 0.106016 )
+
+[node name="Parroie rocheuse12" parent="Sol" instance=ExtResource( 14 )]
+transform = Transform( -0.189556, -0.819829, 0.483057, -0.947458, 0.0547848, -0.136438, 0.0590625, -0.485707, -0.86327, 25.2043, 0.605229, -1.6499 )
+
+[node name="Parroie rocheuse13" parent="Sol" instance=ExtResource( 14 )]
+transform = Transform( 0.133651, -0.0936426, -0.986543, -0.947458, 0.0547848, -0.136438, 0.146823, 0.948294, -0.0728783, 17.9292, -0.0548368, 4.32243 )
+
+[node name="Background" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.538013, 31.6779, -38.75 )
+mesh = SubResource( 15 )
+material/0 = null
+
+[node name="Wall" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 73.6744, 31.438, 0 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Wall"]
+mesh = SubResource( 16 )
+material/0 = SubResource( 17 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Wall"]
+shape = SubResource( 18 )
+
+[node name="Wall2" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -73.9268, 25.7763, 0 )
+visible = false
+
+[node name="MeshInstance" type="MeshInstance" parent="Wall2"]
+mesh = SubResource( 16 )
+material/0 = SubResource( 19 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Wall2"]
+shape = SubResource( 18 )
+
+[node name="Pilliers" type="Spatial" parent="."]
+transform = Transform( 1.494, 0, 0, 0, 1.494, 0, 0, 0, 1.494, 0, -1.43504, 46.6909 )
+
+[node name="Pillier 2" parent="Pilliers" instance=ExtResource( 10 )]
+transform = Transform( 0.152488, 0.00787146, 0, -0.00787146, 0.152488, 0, 0, 0, 0.152691, 9.23989, 1.98171, -30.6163 )
+physics_material_override = SubResource( 22 )
+
+[node name="Pillier 1" parent="Pilliers" instance=ExtResource( 12 )]
+transform = Transform( 0.152592, 0.0054833, 0, -0.0088823, 0.247182, -0.0142183, -0.000314686, 0.00875724, 0.152439, 12.7562, 1.6756, -30.6231 )
+
+[node name="Pillier 6" parent="Pilliers" instance=ExtResource( 12 )]
+transform = Transform( 0.0794598, -0.141574, 0.104543, 0.113391, 0.159092, -0.00890536, -0.0647456, 0.125904, 0.111496, 11.9105, 0.874755, -31.7092 )
+
+[node name="Pillier 3" parent="Pilliers" instance=ExtResource( 12 )]
+transform = Transform( 0.125426, 0.133922, -0.00743454, -0.0801208, 0.193828, 0.0501649, 0.0348203, -0.0755051, 0.144458, 12.7562, 0.83911, -33.3706 )
+
+[node name="Pillier 12" parent="Pilliers" instance=ExtResource( 5 )]
+transform = Transform( 0.150011, 0.0111994, 0.0277864, -0.00634876, 0.273688, 0, -0.0277623, -0.00207266, 0.150141, 8.46214, 1.76727, -30.5965 )
+
+[node name="Pillier 14" parent="Pilliers" instance=ExtResource( 5 )]
+transform = Transform( -0.150522, -0.0156229, 0.0350719, -0.00617534, 0.243734, 0.0166418, -0.0360348, 0.0234898, -0.149352, 8.4719, 1.56589, -31.9385 )
+
+[node name="Pillier 13" parent="Pilliers" instance=ExtResource( 11 )]
+transform = Transform( 0.147425, -0.104887, -0.0142556, 0.0474752, 0.221136, 0.0245063, 0.00234931, -0.0173144, 0.151688, 12.1646, 1.56624, -30.644 )
+
+[node name="Pillier 20" parent="Pilliers" instance=ExtResource( 11 )]
+transform = Transform( -0.0231146, 0.244708, 0.0282902, -0.153146, -0.00451776, 0.00185622, 0.00234931, -0.0173144, 0.151688, 10.6437, 1.02093, -31.9909 )
+
+[node name="Pillier 19" parent="Pilliers" instance=ExtResource( 11 )]
+transform = Transform( 0.15482, -0.0388455, -0.00683185, 0.00434362, 0.241647, 0.0275156, 0.00234931, -0.0173144, 0.151688, 12.1646, 1.18578, -33.1807 )
+
+[node name="Pillier 4" parent="Pilliers" instance=ExtResource( 12 )]
+transform = Transform( 0.0253658, 0.00955503, 0.150266, -0.0088823, 0.247182, -0.0142183, -0.15047, -0.00393158, 0.0256503, 12.7562, 1.6756, -31.9215 )
+
+[node name="Pillier 15" parent="Pilliers" instance=ExtResource( 11 )]
+transform = Transform( 0.151304, 0.0205298, 0, -0.0330919, 0.243887, 0.028351, 0.00234931, -0.0173144, 0.151688, 9.21485, 1.28954, -31.9134 )
+
+[node name="Pillier 18" parent="Pilliers" instance=ExtResource( 11 )]
+transform = Transform( 0.151304, 0.0205298, 0, -0.0330919, 0.243887, 0.028351, 0.00234931, -0.0173144, 0.151688, 8.48853, 1.16129, -33.3453 )
+
+[node name="Pillier 5" parent="Pilliers" instance=ExtResource( 10 )]
+transform = Transform( 0.152145, 0, 0.0129016, 0.00128677, 0.151929, -0.0151744, -0.0128373, 0.0152289, 0.151386, 9.23989, 1.38761, -33.3062 )
+
+[node name="Pillier 16" parent="Pilliers" instance=ExtResource( 5 )]
+transform = Transform( 0.14136, 0, 0.0577224, 0, 0.273925, 0, -0.0577224, 0, 0.14136, 8.46214, 1.76727, -33.2864 )
+
+[node name="Pillier 17" parent="Pilliers" instance=ExtResource( 11 )]
+transform = Transform( 0.151304, 0.0205298, 0, -0.0330919, 0.243887, 0.028351, 0.00234931, -0.0173144, 0.151688, 12.1646, 1.64529, -33.3049 )
+
+[node name="Mur Gravé" parent="Pilliers" instance=ExtResource( 13 )]
+transform = Transform( -1.54583e-08, 0, 0.353645, 0.0294239, 0.268885, 1.28616e-09, -0.268885, 0.0294239, -1.17533e-08, 9.60013, 1.83858, -33.6889 )
+
+[node name="Mur Gravé2" parent="Pilliers" instance=ExtResource( 13 )]
+transform = Transform( 0.0293927, 0.268599, -0.0163014, 0.00534963, -0.0131243, -0.35316, -0.268835, 0.0291057, -0.00880991, 11.4382, 1.46168, -33.6889 )
+
+[node name="Mur Gravé3" parent="Pilliers" instance=ExtResource( 13 )]
+transform = Transform( 0.00245856, 0.022467, -0.352409, -0.029321, -0.267945, -0.0295492, -0.268885, 0.0294239, -1.17533e-08, 15.0557, 1.24971, -33.6889 )
+
+[node name="Mur Gravé4" parent="Pilliers" instance=ExtResource( 13 )]
+transform = Transform( -0.0288429, -0.268756, -0.0132642, -0.00778685, -0.00936472, 0.353287, -0.268835, 0.0291057, -0.00880991, 13.019, 1.45716, -33.6889 )
+
+[node name="Murs caverne" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.88457, 44.0372 )
+
+[node name="Parroie rocheuse" parent="Murs caverne" instance=ExtResource( 14 )]
+transform = Transform( -5.96046e-08, 0, 1, 0.261397, 0.965231, 1.55805e-08, -0.965231, 0.261397, -5.75323e-08, 15.6254, 3.33801, -50.7457 )
+
+[node name="Parroie rocheuse2" parent="Murs caverne" instance=ExtResource( 14 )]
+transform = Transform( -0.222181, -0.820423, -0.526822, -0.13771, -0.508505, 0.849975, -0.965231, 0.261397, -5.75323e-08, 7.00764, 3.33801, -50.7457 )
+
+[node name="Parroie rocheuse3" parent="Murs caverne" instance=ExtResource( 14 )]
+transform = Transform( 0.241627, 0.0309575, -0.969875, -0.0126435, 0.999507, 0.0287534, 0.970287, 0.005315, 0.2419, 25.4524, 4.0185, -50.7457 )
+
+[node name="Parroie rocheuse4" parent="Murs caverne" instance=ExtResource( 14 )]
+transform = Transform( -5.96046e-08, 0, 1, -0.757641, -0.520868, -4.51589e-08, 0.566521, -0.824047, 3.37673e-08, 10.9027, 10.2024, -48.1079 )
+
+[node name="Parroie rocheuse5" parent="Murs caverne" instance=ExtResource( 14 )]
+transform = Transform( -0.222181, -0.820423, -0.526822, -0.477945, 0.511931, -0.595665, 0.824867, 0.129916, -0.550197, 7.00766, 10.2024, -48.1079 )
+
+[node name="Parroie rocheuse6" parent="Murs caverne" instance=ExtResource( 14 )]
+transform = Transform( 0.241627, 0.0309575, -0.969875, 0.586322, -0.697294, 0.123815, -0.731395, -0.651041, -0.202995, 25.4524, 9.72555, -48.5484 )
+
+[node name="Parroie rocheuse11" parent="Murs caverne" instance=ExtResource( 14 )]
+transform = Transform( -5.96046e-08, 0, 1, -0.0072661, 0.972427, -4.33094e-10, -0.945998, 0.0688627, -5.63859e-08, 10.9027, 6.05259, -34.9322 )
+
+[node name="Parroie rocheuse12" parent="Murs caverne" instance=ExtResource( 14 )]
+transform = Transform( -0.222181, -0.820423, -0.526822, -0.381117, -0.408048, 0.796187, -0.873834, 0.335334, -0.153687, 7.00766, 6.05259, -34.9322 )
+
+[node name="Parroie rocheuse13" parent="Murs caverne" instance=ExtResource( 14 )]
+transform = Transform( 0.241627, 0.0309575, -0.969875, 0.241599, 0.937644, 0.0901189, 0.905727, -0.175775, 0.220035, 22.4517, 6.69002, -35.0552 )
+
+[node name="Parroie rocheuse7" parent="Murs caverne" instance=ExtResource( 14 )]
+transform = Transform( 0.935757, -0.187779, -0.090807, -0.0989207, -0.107868, -0.987348, 0.0976694, 0.950505, -0.129989, 23.2574, 5.53242, -40.7843 )
+
+[node name="Parroie rocheuse8" parent="Murs caverne" instance=ExtResource( 14 )]
+transform = Transform( 0.207909, 0.133172, -0.93748, 0.931355, -0.202932, 0.10339, -0.218067, -0.945055, -0.213348, 11.5158, 13.4772, -39.3109 )
+
+[node name="Parroie rocheuse9" parent="Murs caverne" instance=ExtResource( 14 )]
+transform = Transform( 0.167707, 0.160348, -0.970719, -0.947458, 0.0547848, -0.136438, 0.106273, 0.939318, 0.190484, 25.3765, 11.7694, -41.0668 )
+
+[node name="Parroie rocheuse14" parent="Murs caverne" instance=ExtResource( 14 )]
+transform = Transform( 0.0643284, -0.0935704, -0.993532, -0.757641, -0.520868, -4.51589e-08, -0.562857, 0.818717, -0.11355, 1.40124, 10.2024, -38.9524 )
+
+[node name="Parroie rocheuse15" parent="Murs caverne" instance=ExtResource( 14 )]
+transform = Transform( -0.323114, -0.104683, 0.940552, 0.586322, -0.697294, 0.123815, 0.699228, 0.643315, 0.311811, -13.1044, 9.72555, -40.1669 )
+
+[node name="Parroie rocheuse16" parent="Murs caverne" instance=ExtResource( 14 )]
+transform = Transform( -0.231326, -0.239621, 0.907191, 0.931355, -0.202932, 0.10339, 0.193048, 0.923821, 0.318418, 1.79105, 13.4772, -47.762 )
+
+[node name="Parroie rocheuse17" parent="Murs caverne" instance=ExtResource( 14 )]
+transform = Transform( -0.154555, -0.0526517, 0.98607, -0.947458, 0.0547848, -0.136438, -0.124629, -0.95145, -0.0790275, -12.1794, 11.7694, -47.5914 )
+
+[node name="Parroie rocheuse18" parent="Murs caverne" instance=ExtResource( 14 )]
+transform = Transform( 0.565813, -0.823017, 0.0499827, -0.757641, -0.520868, -4.51589e-08, 0.0283163, -0.0411881, -0.99875, -9.60259, 10.2024, -36.0329 )
+
+[node name="Parroie rocheuse19" parent="Murs caverne" instance=ExtResource( 14 )]
+transform = Transform( -0.718404, -0.64868, -0.251218, 0.586322, -0.697294, 0.123815, -0.277882, -0.0634596, 0.958517, -9.31529, 9.72555, -50.5864 )
+
+[node name="Parroie rocheuse20" parent="Murs caverne" instance=ExtResource( 14 )]
+transform = Transform( -0.207402, -0.937218, -0.259939, 0.931355, -0.202932, 0.10339, -0.218549, -0.180242, 0.925644, -0.786006, 13.4772, -36.2055 )
+
+[node name="Parroie rocheuse21" parent="Murs caverne" instance=ExtResource( 14 )]
+transform = Transform( 0.114523, 0.946159, 0.141727, -0.947458, 0.0547848, -0.136438, -0.162186, -0.113198, 0.979026, -1.84693, 11.7694, -50.1366 )
+
+[node name="Parroie rocheuse22" parent="Murs caverne" instance=ExtResource( 14 )]
+transform = Transform( 0.565813, -0.823017, 0.0499827, -0.757641, -0.520868, -4.51589e-08, 0.0283163, -0.0411881, -0.99875, -25.2038, 10.2024, -36.0329 )
+
+[node name="Parroie rocheuse23" parent="Murs caverne" instance=ExtResource( 14 )]
+transform = Transform( -0.718404, -0.64868, -0.251218, 0.586322, -0.697294, 0.123815, -0.277882, -0.0634596, 0.958517, -24.9165, 9.72555, -50.5864 )
+
+[node name="Parroie rocheuse24" parent="Murs caverne" instance=ExtResource( 14 )]
+transform = Transform( -0.207402, -0.937218, -0.259939, 0.931355, -0.202932, 0.10339, -0.218549, -0.180242, 0.925644, -16.3872, 13.4772, -36.2055 )
+
+[node name="Parroie rocheuse25" parent="Murs caverne" instance=ExtResource( 14 )]
+transform = Transform( 0.114523, 0.946159, 0.141727, -0.947458, 0.0547848, -0.136438, -0.162186, -0.113198, 0.979026, -17.4481, 11.7694, -50.1366 )
+
+[node name="Parroie rocheuse10" parent="Murs caverne" instance=ExtResource( 14 )]
+transform = Transform( 0.167707, 0.160348, -0.970719, -0.947458, 0.0547848, -0.136438, 0.106273, 0.939318, 0.190484, 25.3765, 11.7694, -41.0668 )
+
+[node name="SpotLight" type="SpotLight" parent="."]
+transform = Transform( 0.982609, -0.00291358, 0.185664, -0.185164, 0.0595628, 0.980901, -0.0139166, -0.99822, 0.0579875, 20.8684, 17.7609, 0.175497 )
+light_color = Color( 0.992157, 1, 0.713726, 1 )
+light_energy = 11.16
+light_indirect_energy = 0.0
+light_specular = 0.0
+shadow_enabled = true
+shadow_bias = 0.8
+spot_range = 28.8
+spot_attenuation = 2.21914
+spot_angle = 13.7
+spot_angle_attenuation = 1.93187
+
+[node name="Particules poussière" type="Particles" parent="."]
+transform = Transform( 0.214386, 0.0487867, 0.671927, -0.0209344, 0.180211, -0.449674, -0.166893, 0.0400653, 1.20441, 18.6708, 4.61458, -0.186728 )
+amount = 200
+lifetime = 31.71
+speed_scale = 0.18
+visibility_aabb = AABB( -10.1931, -3.52121, -0.292992, 20.3863, 7.04243, 0.585985 )
+process_material = SubResource( 25 )
+draw_pass_1 = SubResource( 27 )
