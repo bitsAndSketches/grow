@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://src/World/ClimbEdge.gd" type="Script" id=1]
 [ext_resource path="res://assets/Assets 3D/Grande roche.tscn" type="PackedScene" id=2]
@@ -13,6 +13,8 @@ _data = {
 [sub_resource type="BoxShape" id=2]
 
 [sub_resource type="BoxShape" id=3]
+
+[sub_resource type="BoxShape" id=4]
 
 [node name="Climbable" type="Spatial"]
 
@@ -52,6 +54,12 @@ shape = SubResource( 3 )
 
 [node name="ReleasePosition" type="Position3D" parent="Grande roche/ClimbEnd"]
 transform = Transform( 1, 1.71603e-16, 0, 1.16552e-17, 1, 0, 0, 7.10543e-15, 1, -0.26021, -0.0207272, -0.276642 )
+
+[node name="StaticBody" type="StaticBody" parent="Grande roche"]
+transform = Transform( 0.138839, -0.205606, 0.00499803, -0.205606, 0.950911, 0.00119331, 0.00499803, 0.0011933, 0.999971, 1.42383, 0.459987, 9.37243 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Grande roche/StaticBody"]
+shape = SubResource( 4 )
 [connection signal="body_entered" from="Grande roche/ClimbStart" to="Grande roche/ClimbStart" method="_on_climb_edge_body_entered"]
 [connection signal="body_exited" from="Grande roche/ClimbStart" to="Grande roche/ClimbStart" method="_on_climb_edge_body_exited"]
 [connection signal="body_entered" from="Grande roche/ClimbEnd" to="Grande roche/ClimbEnd" method="_on_climb_edge_body_entered"]
