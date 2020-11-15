@@ -2,15 +2,17 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Orbe.png-d40fb00c53e4e820dd007b85712a1b67.stex"
+path.s3tc="res://.import/Orbe.png-d40fb00c53e4e820dd007b85712a1b67.s3tc.stex"
+path.etc2="res://.import/Orbe.png-d40fb00c53e4e820dd007b85712a1b67.etc2.stex"
 metadata={
-"vram_texture": false
+"imported_formats": [ "s3tc", "etc2" ],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/Assets 2D/Orbe/Orbe.png"
-dest_files=[ "res://.import/Orbe.png-d40fb00c53e4e820dd007b85712a1b67.stex" ]
+dest_files=[ "res://.import/Orbe.png-d40fb00c53e4e820dd007b85712a1b67.s3tc.stex", "res://.import/Orbe.png-d40fb00c53e4e820dd007b85712a1b67.etc2.stex" ]
 
 [params]
 
