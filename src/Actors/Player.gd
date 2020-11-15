@@ -23,15 +23,16 @@ func set_mode(new_mode: String) -> void:
 
 func _physics_process(delta: float) -> void:
 	if mode == "free":
+#		global_transform.basis = Basis.IDENTITY
+#		Lock z position
+		global_transform.origin.z = 0
 		velocity = get_input() * speed
 		velocity += gravity * delta
 		velocity = move_and_slide(velocity, FLOOR_NORMAL)
 
-#		Lock z position
-		transform.origin.z = z_position
 	
 	
 	#	To avoid weird movements on tiny slopes
-		if abs(velocity.x) < 2:
-			transform.origin.x = previous_x
-		previous_x = transform.origin.x
+#		if abs(velocity.x) < 2:
+#			transform.origin.x = previous_x
+#		previous_x = transform.origin.x

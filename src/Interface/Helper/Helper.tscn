@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="Theme" id=1]
+
+[sub_resource type="StyleBoxEmpty" id=2]
+content_margin_left = 75.0
+content_margin_right = 75.0
+content_margin_top = 75.0
+content_margin_bottom = 75.0
+
+[node name="VBoxContainer" type="VBoxContainer"]
+anchor_right = 0.324
+anchor_bottom = 0.137
+margin_right = 0.223999
+margin_bottom = -0.200005
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+margin_right = 332.0
+theme = SubResource( 1 )
+custom_styles/panel = SubResource( 2 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel"]
+margin_right = 40.0
+margin_bottom = 40.0
+text = "Test
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}

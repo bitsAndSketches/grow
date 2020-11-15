@@ -11,16 +11,16 @@ __meta__ = {
 }
 
 [node name="Parroie rocheuse" parent="." instance=ExtResource( 3 )]
-transform = Transform( 0.156986, 0, -0.987601, 0, 1, 0, 0.987601, 0, 0.156986, 1.71204, 2.87764, 0.792145 )
+transform = Transform( 0.156986, 0, -0.987601, 0, 1, 0, 0.987601, 0, 0.156986, 1.71204, 2.87764, 0.0261948 )
 
 [node name="Parroie rocheuse2" parent="." instance=ExtResource( 3 )]
-transform = Transform( 0.156986, 0, -0.987601, 0, 1, 0, 0.987601, 0, 0.156986, -8.56374, 3.5975, 0.792145 )
+transform = Transform( 0.156986, 0, -0.987601, 0, 1, 0, 0.987601, 0, 0.156986, -8.56374, 3.5975, 0.0261948 )
 
 [node name="Parroie rocheuse3" parent="." instance=ExtResource( 3 )]
-transform = Transform( 0.103973, 0, 0.99458, 0, 1, 0, -0.99458, 0, 0.103973, 11.4941, 2.87764, 0.792145 )
+transform = Transform( 0.103973, 0, 0.99458, 0, 1, 0, -0.99458, 0, 0.103973, 11.4941, 2.87764, 0.0261948 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.01168, 8.44531, 0.953012 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.012, 8.445, 0 )
 
 [node name="Climbable" parent="." instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.1103, 4.44076, 1.17717 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.1103, 4.44076, 0.41122 )
