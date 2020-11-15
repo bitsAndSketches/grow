@@ -21,4 +21,10 @@ config/icon="res://icon.png"
 
 [rendering]
 
+quality/directional_shadow/size=5000
+quality/shadow_atlas/size=5000
+quality/shadow_atlas/quadrant_0_subdiv=2
+quality/shadow_atlas/quadrant_1_subdiv=3
+quality/shadow_atlas/quadrant_2_subdiv=4
+quality/shadow_atlas/quadrant_3_subdiv=5
 environment/default_environment="res://default_env.tres"

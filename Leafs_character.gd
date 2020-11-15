@@ -6,12 +6,13 @@ var nb_leafs
 var max_leafs = 10
 var rotation_speed = 5
 var lifetime = 500
-var rand_factor = 1
+var rand_factor = 0.2
 
 func _physics_process(delta):
 	if leafs.size() < max_leafs :
 		spawn_leafs()
-	leaf_lifetime()
+	
+	#leaf_lifetime()
 
 
 func spawn_leafs () :
@@ -24,7 +25,7 @@ func spawn_leafs () :
 	this_leaf.scale.y = scale_ratio
 	this_leaf.transform = this_leaf.global_transform.rotated(Vector3(1,0,0), rand_range(0 , 50))
 	leafs["leaf" + str(leafs.size())].global_transform.origin.x = self.global_transform.origin.x + rand_range(-rand_factor, rand_factor)
-	leafs["leaf" + str(leafs.size())].global_transform.origin.y = self.global_transform.origin.y + 2 + rand_range(-rand_factor, rand_factor)
+	leafs["leaf" + str(leafs.size())].global_transform.origin.y = self.global_transform.origin.y + rand_range(-rand_factor, rand_factor)
 	leafs["leaf" + str(leafs.size())].global_transform.origin.z = self.global_transform.origin.z + rand_range(-rand_factor, rand_factor)
 	
 func leaf_lifetime() :
