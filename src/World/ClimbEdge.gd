@@ -1,8 +1,10 @@
 extends Area
 
 export var is_end: bool = false
+export var helper_node: NodePath
 
 onready var path_follow = get_node("../Path/PathFollow")
+onready var helper = get_node(helper_node)
 onready var player_scene = preload("res://src/Actors/Player.tscn")
 
 var is_player_on = false
@@ -12,11 +14,13 @@ func _on_climb_edge_body_entered(body: Node) -> void:
 	if body.name == "Player":
 		is_player_on = true
 		player = body
+		helper.show_helper(player.mode)
 
 func _on_climb_edge_body_exited(body: Node) -> void:
 	if body.name == "Player":
 		is_player_on = false
 		player = null
+		helper.hide()
 
 func _input(event: InputEvent) -> void:
 	if is_player_on and event.is_action_released("action"):
