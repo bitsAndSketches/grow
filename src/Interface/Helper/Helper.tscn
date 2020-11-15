@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/Interface/Helper/Helper.gd" type="Script" id=1]
+
+[node name="Helper" type="VBoxContainer"]
+anchor_top = 0.907
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 200.0
+margin_top = -0.246765
+margin_right = -200.0
+margin_bottom = -25.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_right = 624.0
+margin_bottom = 14.0
+text = "Climb"
+align = 1
+
+[node name="Button" type="Button" parent="."]
+margin_top = 18.0
+margin_right = 624.0
+margin_bottom = 38.0
+text = "Space"
