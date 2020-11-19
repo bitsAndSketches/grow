@@ -1,0 +1,15 @@
+Godot Engine v3.2.3.stable.official - https://godotengine.org
+OpenGL ES 3.0 Renderer: GeForce GTX 950M/PCIe/SSE2
+ 
+**ERROR**: Resource file not found: res://assets/Assets 2D/Character/Move right/Blob_Right_Calque_1_copie_4.png.
+   At: core/io/resource_loader.cpp:283:_load() - Condition "!file_check->file_exists(p_path)" is true. Returned: RES()
+**ERROR**: res://Blob.tscn:3 - Parse Error: [ext_resource] referenced nonexistent resource at: res://assets/Assets 2D/Character/Move right/Blob_Right_Calque_1_copie_4.png
+   At: scene/resources/resource_format_text.cpp:440:poll() - res://Blob.tscn:3 - Parse Error: [ext_resource] referenced nonexistent resource at: res://assets/Assets 2D/Character/Move right/Blob_Right_Calque_1_copie_4.png
+**ERROR**: Failed to load resource 'res://Blob.tscn'.
+   At: core/io/resource_loader.cpp:208:load() - Condition "err != OK" is true. Returned: RES()
+**ERROR**: Failed loading resource: res://Blob.tscn. Make sure resources have been imported by opening the project in the editor at least once.
+   At: core/io/resource_loader.cpp:278:_load() - Condition "found" is true. Returned: RES()
+**ERROR**: Failed loading scene: res://Blob.tscn
+   At: main/main.cpp:1944:start() - Condition "!scene" is true. Returned: false
+**WARNING**: ObjectDB instances leaked at exit (run with --verbose for details).
+   At: core/object.cpp:2135:cleanup() - ObjectDB instances leaked at exit (run with --verbose for details).
