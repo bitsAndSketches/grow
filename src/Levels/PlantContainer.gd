@@ -1,3 +1,4 @@
+tool
 extends Spatial
 
 export var spawn_offset = 2.5
@@ -7,7 +8,7 @@ var last_plant_left = INF
 
 onready var velocity = Vector3.ZERO
 onready var is_landed = false
-onready var	plant_scene = preload("res://assets/Assets 2D/Root 1/Root 1.tscn")
+onready var	plant_scene = preload("res://assets/Assets 3D/Growing weed.tscn")
 onready var plant_container = get_node("../PlantContainer")
 
 var half_sprite = 2.5
@@ -28,11 +29,11 @@ func check_for_spawn() -> void:
 func spawn(x_pos: float):
 	var position_y = get_node("../Player").transform.origin.y
 	var position_z = get_node("../Player").transform.origin.z
-	var plant: AnimatedSprite3D = plant_scene.instance()
-	plant.play("grow")
+	var plant = plant_scene.instance()
+	plant.get_child(1).play("Armature001Action001")
 	plant.transform.origin.y = position_y
 	plant.transform.origin.x = x_pos
-	plant.transform.origin.z = position_z
+	plant.transform.origin.z = position_z + rand_range(-1.00, 1.00)
 	get_parent().add_child_below_node(plant_container, plant)
 	if plant.transform.origin.x < last_plant_left:
 		last_plant_left = plant.transform.origin.x - half_sprite

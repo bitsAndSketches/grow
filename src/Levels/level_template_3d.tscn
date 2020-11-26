@@ -94,11 +94,11 @@ albedo_texture = ExtResource( 7 )
 material = SubResource( 6 )
 size = Vector2( 0.5, 0.5 )
 
-[sub_resource type="SpriteFrames" id=23]
+[sub_resource type="SpriteFrames" id=8]
 animations = [ {
-"frames": [ ExtResource( 17 ) ],
+"frames": [ ExtResource( 9 ), ExtResource( 18 ), ExtResource( 19 ) ],
 "loop": true,
-"name": "Idle",
+"name": "Right",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 2 ), ExtResource( 4 ), ExtResource( 6 ) ],
@@ -106,45 +106,45 @@ animations = [ {
 "name": "Left",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 9 ), ExtResource( 18 ), ExtResource( 19 ) ],
+"frames": [ ExtResource( 17 ) ],
 "loop": true,
-"name": "Right",
+"name": "Idle",
 "speed": 5.0
 } ]
 
-[sub_resource type="PhysicsMaterial" id=8]
+[sub_resource type="PhysicsMaterial" id=9]
 
-[sub_resource type="BoxShape" id=9]
+[sub_resource type="BoxShape" id=10]
 extents = Vector3( 50, 1, 50 )
 
-[sub_resource type="CubeMesh" id=10]
+[sub_resource type="CubeMesh" id=11]
 size = Vector3( 100, 2, 100 )
 
-[sub_resource type="ShaderMaterial" id=11]
-
-[sub_resource type="CubeMesh" id=12]
-size = Vector3( 100, 100, 1 )
+[sub_resource type="ShaderMaterial" id=12]
 
 [sub_resource type="CubeMesh" id=13]
+size = Vector3( 100, 100, 1 )
+
+[sub_resource type="CubeMesh" id=14]
 size = Vector3( 50, 100.052, 100 )
 
-[sub_resource type="ShaderMaterial" id=14]
+[sub_resource type="ShaderMaterial" id=15]
 
-[sub_resource type="BoxShape" id=15]
+[sub_resource type="BoxShape" id=16]
 extents = Vector3( 25, 50, 50 )
 
-[sub_resource type="ShaderMaterial" id=16]
+[sub_resource type="ShaderMaterial" id=17]
 
-[sub_resource type="PhysicsMaterial" id=17]
+[sub_resource type="PhysicsMaterial" id=18]
 
-[sub_resource type="Curve" id=18]
+[sub_resource type="Curve" id=19]
 max_value = 568.52
 _data = [ Vector2( 0, 0 ), 0.0, 4.14865, 0, 0, Vector2( 1, 0 ), -3.33157, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=19]
-curve = SubResource( 18 )
+[sub_resource type="CurveTexture" id=20]
+curve = SubResource( 19 )
 
-[sub_resource type="ParticlesMaterial" id=20]
+[sub_resource type="ParticlesMaterial" id=21]
 lifetime_randomness = 0.72
 emission_shape = 2
 emission_box_extents = Vector3( 10, 7.282, 0.5 )
@@ -156,10 +156,10 @@ damping = 2.3
 damping_random = 0.1
 scale = 0.0
 scale_random = 1.0
-scale_curve = SubResource( 19 )
+scale_curve = SubResource( 20 )
 color = Color( 0.376471, 0.121569, 0.654902, 1 )
 
-[sub_resource type="SpatialMaterial" id=21]
+[sub_resource type="SpatialMaterial" id=22]
 flags_transparent = true
 params_billboard_mode = 1
 albedo_texture = ExtResource( 15 )
@@ -170,8 +170,8 @@ emission_operator = 1
 emission_on_uv2 = false
 emission_texture = ExtResource( 16 )
 
-[sub_resource type="QuadMesh" id=22]
-material = SubResource( 21 )
+[sub_resource type="QuadMesh" id=23]
+material = SubResource( 22 )
 size = Vector2( 0.05, 0.05 )
 
 [node name="Spatial" type="Spatial"]
@@ -242,20 +242,21 @@ texture = ExtResource( 15 )
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Player"]
 transform = Transform( 0.395359, 0, 0, 0, 0.395359, 0, 0, 0, 0.395359, -0.0252571, -0.118783, 0 )
-frames = SubResource( 23 )
+frames = SubResource( 8 )
 animation = "Idle"
 
 [node name="Sol" type="StaticBody" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.90924, 0 )
-physics_material_override = SubResource( 8 )
+visible = false
+physics_material_override = SubResource( 9 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Sol"]
-shape = SubResource( 9 )
+shape = SubResource( 10 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Sol"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.553955, 0 )
-mesh = SubResource( 10 )
-material/0 = SubResource( 11 )
+mesh = SubResource( 11 )
+material/0 = SubResource( 12 )
 
 [node name="Parroie rocheuse10" parent="Sol" instance=ExtResource( 14 )]
 transform = Transform( 0.113878, 0.0711268, -0.989283, 0.931644, -0.207011, 0.108497, -0.118478, -0.949971, -0.097713, 15.6423, -0.55327, -1.55744 )
@@ -273,36 +274,38 @@ transform = Transform( 0.133651, -0.0936426, -0.986543, -0.947458, 0.0547848, -0
 
 [node name="Background" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.538013, 31.6779, -38.75 )
-mesh = SubResource( 12 )
+mesh = SubResource( 13 )
 material/0 = null
 
 [node name="Wall" type="StaticBody" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 73.6744, 31.438, 0 )
+visible = false
 
 [node name="MeshInstance" type="MeshInstance" parent="Wall"]
-mesh = SubResource( 13 )
-material/0 = SubResource( 14 )
+mesh = SubResource( 14 )
+material/0 = SubResource( 15 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Wall"]
-shape = SubResource( 15 )
+shape = SubResource( 16 )
 
 [node name="Wall2" type="StaticBody" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -73.9268, 25.7763, 0 )
 visible = false
 
 [node name="MeshInstance" type="MeshInstance" parent="Wall2"]
-mesh = SubResource( 13 )
-material/0 = SubResource( 16 )
+mesh = SubResource( 14 )
+material/0 = SubResource( 17 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Wall2"]
-shape = SubResource( 15 )
+shape = SubResource( 16 )
 
 [node name="Pilliers" type="Spatial" parent="."]
 transform = Transform( 1.494, 0, 0, 0, 1.494, 0, 0, 0, 1.494, 0, -1.43504, 46.6909 )
+visible = false
 
 [node name="Pillier 2" parent="Pilliers" instance=ExtResource( 10 )]
 transform = Transform( 0.152488, 0.00787146, 0, -0.00787146, 0.152488, 0, 0, 0, 0.152691, 9.23989, 1.98171, -30.6163 )
-physics_material_override = SubResource( 17 )
+physics_material_override = SubResource( 18 )
 
 [node name="Pillier 1" parent="Pilliers" instance=ExtResource( 12 )]
 transform = Transform( 0.152592, 0.0054833, 0, -0.0088823, 0.247182, -0.0142183, -0.000314686, 0.00875724, 0.152439, 12.7562, 1.6756, -30.6231 )
@@ -360,6 +363,7 @@ transform = Transform( -0.0288429, -0.268756, -0.0132642, -0.00778685, -0.009364
 
 [node name="Murs caverne" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.88457, 44.0372 )
+visible = false
 
 [node name="Parroie rocheuse" parent="Murs caverne" instance=ExtResource( 14 )]
 transform = Transform( -5.96046e-08, 0, 1, 0.261397, 0.965231, 1.55805e-08, -0.965231, 0.261397, -5.75323e-08, 15.6254, 3.33801, -50.7457 )
@@ -455,5 +459,5 @@ amount = 200
 lifetime = 31.71
 speed_scale = 0.18
 visibility_aabb = AABB( -10.1931, -3.52121, -0.292992, 20.3863, 7.04243, 0.585985 )
-process_material = SubResource( 20 )
-draw_pass_1 = SubResource( 22 )
+process_material = SubResource( 21 )
+draw_pass_1 = SubResource( 23 )
