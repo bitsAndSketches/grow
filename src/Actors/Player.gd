@@ -30,7 +30,12 @@ func _physics_process(delta: float) -> void:
 		velocity += gravity * delta
 		velocity = move_and_slide(velocity, FLOOR_NORMAL)
 
-	
+	if Input.is_action_pressed("ui_left") :
+		get_node("AnimatedSprite3D").play("Left")
+	elif Input.is_action_pressed("ui_right") :
+		get_node("AnimatedSprite3D").play("Right")
+	else :
+		get_node("AnimatedSprite3D").play("Idle")
 	
 	#	To avoid weird movements on tiny slopes
 #		if abs(velocity.x) < 2:

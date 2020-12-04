@@ -3,7 +3,7 @@
 [ext_resource path="res://src/Actors/Player.gd" type="Script" id=1]
 
 [sub_resource type="BoxShape" id=1]
-extents = Vector3( 0.261909, 0.597502, 0.255866 )
+extents = Vector3( 0.226081, 0.235083, 0.255866 )
 
 [sub_resource type="SpatialMaterial" id=2]
 emission_enabled = true
@@ -25,6 +25,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.340621, 0 )
 shape = SubResource( 1 )
 
 [node name="Debug mesh" type="MeshInstance" parent="."]
+visible = false
 mesh = SubResource( 3 )
 material/0 = null
 
