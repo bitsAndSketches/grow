@@ -3,6 +3,7 @@
 [ext_resource path="res://assets/Assets 3D/test herbe.glb" type="PackedScene" id=1]
 
 [node name="test herbe" instance=ExtResource( 1 )]
+transform = Transform( 0.337511, 0, 0, 0, 0.337511, 0, 0, 0, 0.337511, 0, -0.130067, 0 )
 
 [node name="Armature001" parent="." index="0"]
 transform = Transform( 0.998704, -0.0509029, 0, 0.0509029, 0.998704, 0, 0, 0, 1, -0.285583, 1.25478, -0.167638 )

@@ -1358,7 +1358,7 @@ surfaces/23 = {
 }
 
 [node name="Herbe" type="RigidBody"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.338037, 0 )
+transform = Transform( 0.117393, 0, 0, 0, 0.117393, 0, 0, 0, 0.117393, 0, 0.0539314, 0 )
 mode = 1
 
 [node name="Plan035" type="MeshInstance" parent="."]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=2]
+[gd_scene load_steps=44 format=2]
 
 [ext_resource path="res://src/Actors/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/Assets 2D/Character/Move left/Blob_Left_Calque_1_copie_3.png" type="Texture" id=2]
@@ -19,6 +19,7 @@
 [ext_resource path="res://assets/Assets 2D/Character/Blob.png" type="Texture" id=17]
 [ext_resource path="res://assets/Assets 2D/Character/Move right/Blob_Right_Calque_1_copie_4.png" type="Texture" id=18]
 [ext_resource path="res://assets/Assets 2D/Character/Move right/Blob_Right_Calque_1_copie_5.png" type="Texture" id=19]
+[ext_resource path="res://assets/Assets 3D/Leaves.tscn" type="PackedScene" id=20]
 
 [sub_resource type="ProceduralSky" id=1]
 sky_top_color = Color( 0.294118, 0.176471, 0.372549, 1 )
@@ -96,9 +97,9 @@ size = Vector2( 0.5, 0.5 )
 
 [sub_resource type="SpriteFrames" id=8]
 animations = [ {
-"frames": [ ExtResource( 9 ), ExtResource( 18 ), ExtResource( 19 ) ],
+"frames": [ ExtResource( 17 ) ],
 "loop": true,
-"name": "Right",
+"name": "Idle",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 2 ), ExtResource( 4 ), ExtResource( 6 ) ],
@@ -106,9 +107,9 @@ animations = [ {
 "name": "Left",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 17 ) ],
+"frames": [ ExtResource( 9 ), ExtResource( 18 ), ExtResource( 19 ) ],
 "loop": true,
-"name": "Idle",
+"name": "Right",
 "speed": 5.0
 } ]
 
@@ -184,9 +185,10 @@ environment = SubResource( 2 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03826, 0 )
 visible = false
 script = ExtResource( 3 )
+spawn_offset = 0.1
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.9781, 0.695953, 0.195011 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.9781, 0.864659, 0.195011 )
 speed = 2
 
 [node name="Feuilles 1-1" type="Particles" parent="Player"]
@@ -247,7 +249,6 @@ animation = "Idle"
 
 [node name="Sol" type="StaticBody" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.90924, 0 )
-visible = false
 physics_material_override = SubResource( 9 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Sol"]
@@ -279,7 +280,6 @@ material/0 = null
 
 [node name="Wall" type="StaticBody" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 73.6744, 31.438, 0 )
-visible = false
 
 [node name="MeshInstance" type="MeshInstance" parent="Wall"]
 mesh = SubResource( 14 )
@@ -290,7 +290,6 @@ shape = SubResource( 16 )
 
 [node name="Wall2" type="StaticBody" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -73.9268, 25.7763, 0 )
-visible = false
 
 [node name="MeshInstance" type="MeshInstance" parent="Wall2"]
 mesh = SubResource( 14 )
@@ -301,7 +300,6 @@ shape = SubResource( 16 )
 
 [node name="Pilliers" type="Spatial" parent="."]
 transform = Transform( 1.494, 0, 0, 0, 1.494, 0, 0, 0, 1.494, 0, -1.43504, 46.6909 )
-visible = false
 
 [node name="Pillier 2" parent="Pilliers" instance=ExtResource( 10 )]
 transform = Transform( 0.152488, 0.00787146, 0, -0.00787146, 0.152488, 0, 0, 0, 0.152691, 9.23989, 1.98171, -30.6163 )
@@ -363,7 +361,6 @@ transform = Transform( -0.0288429, -0.268756, -0.0132642, -0.00778685, -0.009364
 
 [node name="Murs caverne" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.88457, 44.0372 )
-visible = false
 
 [node name="Parroie rocheuse" parent="Murs caverne" instance=ExtResource( 14 )]
 transform = Transform( -5.96046e-08, 0, 1, 0.261397, 0.965231, 1.55805e-08, -0.965231, 0.261397, -5.75323e-08, 15.6254, 3.33801, -50.7457 )
@@ -461,3 +458,6 @@ speed_scale = 0.18
 visibility_aabb = AABB( -10.1931, -3.52121, -0.292992, 20.3863, 7.04243, 0.585985 )
 process_material = SubResource( 21 )
 draw_pass_1 = SubResource( 23 )
+
+[node name="Leaves" parent="." instance=ExtResource( 20 )]
+transform = Transform( 0.307819, 0, 0, 0, -1.34552e-08, -0.307819, 0, 1, -4.37114e-08, 16.0849, 1.31386, -3.86641 )
