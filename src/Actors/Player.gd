@@ -38,6 +38,6 @@ func _physics_process(delta: float) -> void:
 		get_node("AnimatedSprite3D").play("Idle")
 	
 	#	To avoid weird movements on tiny slopes
-#		if abs(velocity.x) < 2:
-#			transform.origin.x = previous_x
-#		previous_x = transform.origin.x
+	#	if abs(velocity.x) < 2:
+	#		transform.origin.x = previous_x
+	#	previous_x = transform.origin.x
