@@ -31,7 +31,6 @@ func spawn(x_pos: float, y_pos: float):
 	var random_plant = randi()%2
 	var position_y = get_node("../Player").transform.origin.y
 	var position_z = get_node("../Player").transform.origin.z
-	print(random_plant)
 	var plant = plant_scene[random_plant].instance()
 	if random_plant == 0 :
 		plant.get_child(1).play("Armature001Action001")

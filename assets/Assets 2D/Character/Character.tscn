@@ -1,24 +1,3 @@
-[gd_scene load_steps=5 format=2]
-
-[ext_resource path="res://assets/Assets 2D/Orbe/Orbe_alpha.png" type="Texture" id=1]
-[ext_resource path="res://assets/Assets 2D/Orbe/Orbe.png" type="Texture" id=2]
-
-[sub_resource type="SpatialMaterial" id=2]
-flags_transparent = true
-params_billboard_mode = 1
-albedo_texture = ExtResource( 2 )
-emission_enabled = true
-emission = Color( 0, 0, 0, 1 )
-emission_energy = 1.0
-emission_operator = 0
-emission_on_uv2 = false
-emission_texture = ExtResource( 1 )
-
-[sub_resource type="QuadMesh" id=3]
-material = SubResource( 2 )
-
-[node name="Spatial" type="Spatial"]
-
-[node name="MeshInstance" type="MeshInstance" parent="."]
-mesh = SubResource( 3 )
-material/0 = null
+version https://git-lfs.github.com/spec/v1
+oid sha256:f1be3112e60ad4c8b2846cbc77c56a6818b9653c7d5b808c73d0bdac6ed482b1
+size 714
